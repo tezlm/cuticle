@@ -1,0 +1,22 @@
+{
+	"manifest_version": 3,
+	"name": "chromiutils",
+	"description": "my personal utility scripts for chromium",
+	"version": "0.0.1",
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"commands",
+		"scripting"
+	],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"commands": {
+		"pip": {
+			"suggested_key": "Alt+P",
+			"description": "Activate picture in picture picker"
+		}
+	}
+}
+
