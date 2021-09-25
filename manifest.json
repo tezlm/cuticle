@@ -6,11 +6,13 @@
 	"permissions": [
 		"tabs",
 		"activeTab",
+		"tabGroups",
 		"commands",
 		"scripting"
 	],
 	"host_permissions": [
-		"*://*/*"
+		"http://*/*",
+		"https://*/*"
 	],
 	"background": {
 		"service_worker": "background.js"
@@ -19,6 +21,14 @@
 		"pip": {
 			"suggested_key": "Alt+P",
 			"description": "Activate picture in picture picker"
+		},
+		"prevTab": {
+			"suggested_key": "Alt+1",
+			"description": "(prev. tab, placeholder keyboard shortcut)"
+		},
+		"nextTab": {
+			"suggested_key": "Alt+2",
+			"description": "(next tab, placeholder keyboard shortcut"
 		}
 	}
 }
