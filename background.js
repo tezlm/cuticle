@@ -42,7 +42,6 @@ async function getTab() {
 
 // run a script on a tab
 async function run(tabId, file) {
-	console.log(tabId);
     chrome.scripting.executeScript({
 		target: { tabId },
 		files: [file],
