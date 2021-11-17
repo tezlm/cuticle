@@ -42,7 +42,7 @@ chrome.downloads.onCreated.addListener(() => {
 chrome.downloads.onChanged.addListener(async (item) => {
 	if(!item.state) return;
 	if(["complete", "interrupted"].includes(item.state.current)) downloads--;
-	if(downloads === 0) 
+	if(downloads === 0)
 		chrome.downloads.setShelfEnabled(false);
 });
 
@@ -57,14 +57,14 @@ chrome.downloads.onChanged.addListener(async (item) => {
 // get the current tab id
 async function getTab() {
 	const queryOptions = { active: true, currentWindow: true };
-  	const [tab] = await chrome.tabs.query(queryOptions);
+	const [tab] = await chrome.tabs.query(queryOptions);
 	if(!tab) return;
 	return tab.id;
 }
 
 // run a script on a tab
 async function run(tabId, file) {
-    chrome.scripting.executeScript({
+	chrome.scripting.executeScript({
 		target: { tabId },
 		files: [file],
 	});

@@ -7,6 +7,7 @@ utility scripts for chromium. current features:
 	- press again to unpip
 - hold alt to temporarily speed up videos 5x
 - automatic tab group collapsing (read note below)
+- auto-hide download bar
 
 to make automatic tab group collapsing work, you need to hijack ctrl{-shift}-tab.
 you can do so by running this code on `chrome://extensions`
