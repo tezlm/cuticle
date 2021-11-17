@@ -29,8 +29,30 @@ chrome.commands.onCommand.addListener(async (command) => {
 // ran on every tab
 chrome.tabs.onUpdated.addListener((tab, { status }) => {
 	if(status !== "complete") return;
-    run(tab, "altspeed.js");
+	run(tab, "altspeed.js");
 });
+
+// auto hide shelf
+let downloads = 0;
+chrome.downloads.onCreated.addListener(() => {
+	downloads++;
+	chrome.downloads.setShelfEnabled(true);
+});
+
+chrome.downloads.onChanged.addListener(async (item) => {
+	if(!item.state) return;
+	if(["complete", "interrupted"].includes(item.state.current)) downloads--;
+	if(downloads === 0) 
+		chrome.downloads.setShelfEnabled(false);
+});
+
+// clean up downloads occasionally
+// setInterval(async () => {
+// 	const dl = chrome.downloads;
+// 	const query = { startedAfter: Date.now() - 1000 * 60 * 10 };
+// 	const items = await dl.search(query);
+// 	for(let item of items) dl.removeFile(item.id);
+// }, 1000 * 60 * 5);
 
 // get the current tab id
 async function getTab() {

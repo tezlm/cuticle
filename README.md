@@ -9,7 +9,7 @@ utility scripts for chromium. current features:
 - automatic tab group collapsing (read note below)
 
 to make automatic tab group collapsing work, you need to hijack ctrl{-shift}-tab.
-you can do so by running the code on `chrome://extensions`
+you can do so by running this code on `chrome://extensions`
 
 ```js
 chrome.developerPrivate.updateExtensionCommand({

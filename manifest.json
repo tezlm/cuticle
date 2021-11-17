@@ -2,11 +2,13 @@
 	"manifest_version": 3,
 	"name": "chromiutils",
 	"description": "my personal utility scripts for chromium",
-	"version": "0.0.1",
+	"version": "0.2.0",
 	"permissions": [
 		"tabs",
 		"activeTab",
 		"tabGroups",
+		"downloads",
+		"downloads.shelf",
 		"commands",
 		"scripting"
 	],
@@ -28,7 +30,11 @@
 		},
 		"nextTab": {
 			"suggested_key": "Alt+2",
-			"description": "(next tab, placeholder keyboard shortcut"
+			"description": "(next tab, placeholder keyboard shortcut)"
+		},
+		"toggleShelf": {
+			"suggested_key": "Alt+S",
+			"description": "toggle download shelf"
 		}
 	}
 }

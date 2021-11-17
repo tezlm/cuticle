@@ -6,7 +6,7 @@
 		const active = document.activeFocus ?? document.activeElement;
 		const vid = active?.querySelector("video");
 		if(!vid) return;
-		vid.playbackRate = 5; // change to whatever you like
+		vid.playbackRate = 2.5; // change to whatever you like
 		target = vid;
 	});
 
