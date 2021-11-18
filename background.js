@@ -6,7 +6,7 @@ console.log("hi");
 chrome.commands.onCommand.addListener(async (command) => {
 	switch(command) {
 		case "pip": {
-			run(await getTab(), "pip.js");
+			run(await getTab(), "content.js");
 			break;
 		}
 		case "nextTab":
@@ -24,12 +24,6 @@ chrome.commands.onCommand.addListener(async (command) => {
 			break;
 		}
 	}
-});
-
-// ran on every tab
-chrome.tabs.onUpdated.addListener((tab, { status }) => {
-	if(status !== "complete") return;
-	run(tab, "altspeed.js");
 });
 
 // auto hide shelf

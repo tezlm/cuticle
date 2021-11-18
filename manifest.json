@@ -19,6 +19,14 @@
 	"background": {
 		"service_worker": "background.js"
 	},
+	"content_scripts": [{
+		"matches": ["https://*/*", "http://*/*"],
+		"run_at": "document_start",
+		"js": [
+			"scripts/redirect.js",
+			"scripts/altspeed.js"
+		]
+	}],
 	"commands": {
 		"pip": {
 			"suggested_key": "Alt+P",
